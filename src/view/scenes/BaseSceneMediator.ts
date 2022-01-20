@@ -24,7 +24,7 @@ export default abstract class BaseSceneMediator<
     this.subscribeToDefaultNotifications();
   }
 
-  public handleNotification(notificationName: string, ...args: any[]): void {
+  protected handleNotification(notificationName: string, ...args: any[]): void {
     this.handleDefaultNotifications(notificationName, ...args);
   }
 

@@ -1,41 +1,39 @@
 import { MultiAtlases } from '../../assets';
 import BaseScene from './BaseScene';
 
-export class GameScene extends BaseScene {
-  public static NAME: string = 'GameScene';
+export default class GameScene extends BaseScene {
   protected background: Phaser.GameObjects.Image;
-  protected borderBackground: Phaser.GameObjects.Image;
+  protected border: Phaser.GameObjects.Image;
   protected rocket: Phaser.GameObjects.Image;
   protected footer: Phaser.GameObjects.Image;
   protected hider: Phaser.GameObjects.Image;
 
   constructor() {
-    super(GameScene.NAME);
+    super(GameScene.name);
   }
   public create() {
     this.createBackground();
-    //this.createRocket();
-    console.warn('hasanq');
   }
-  public cleanUp(): void {
-    this.camera.scrollY = 0;
-  }
+
+  public cleanUp(): void {}
+
   protected createBackground(): void {
     this.creatFillBackground();
-    this.createHider();
     this.createFooter();
-    this.createBorderBackground();
+    this.createBorder();
     this.updateBackground();
   }
-  protected createBorderBackground(): void {
-    this.borderBackground = this.make.image({
+
+  protected createBorder(): void {
+    this.border = this.make.image({
       x: this.width * 0.5,
       y: this.height * 0.5,
       key: MultiAtlases.Scene.Atlas.Name,
       frame: MultiAtlases.Scene.Atlas.Frames.SceneBorderBackround,
     });
-    this.add.existing(this.borderBackground);
+    this.add.existing(this.border);
   }
+
   protected creatFillBackground(): void {
     this.background = this.make.image({
       x: this.width * 0.5,
@@ -55,15 +53,7 @@ export class GameScene extends BaseScene {
     });
     this.add.existing(this.rocket);
   }
-  protected createHider(): void {
-    this.hider = this.make.image({
-      x: this.width * 0.5,
-      y: this.height * 0.5 - 390,
-      key: MultiAtlases.Board.Atlas.Name,
-      frame: MultiAtlases.Board.Atlas.Frames.BoardFooterHeader,
-    });
-    this.add.existing(this.hider);
-  }
+
   protected createFooter(): void {
     this.footer = this.make.image({
       x: this.width * 0.5,

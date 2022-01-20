@@ -55,18 +55,19 @@ export namespace MultiAtlases {
       }
     }
   }
-  export namespace Enemy {
+  export namespace Characters {
     export class Atlas {
-      public static Name: string = 'enemy';
-      public static AtlasURL: string = 'assets/multi-atlases/enemy.json';
+      public static Name: string = 'characters';
+      public static AtlasURL: string = 'assets/multi-atlases/characters.json';
       public static TextureURL: string = 'assets/multi-atlases/';
     }
     export namespace Atlas {
       export enum Frames {
-        EnemyEnemy2 = 'enemy/enemy2.png',
-        EnemyEnemy1 = 'enemy/enemy1.png',
-        EnemyEnemy3 = 'enemy/enemy3.png',
-        EnemyEnemy4 = 'enemy/enemy4.png',
+        CharactersPlayer00 = 'characters/player/0/0.png',
+        CharactersEnemy1 = 'characters/enemy/1.png',
+        CharactersEnemy0 = 'characters/enemy/0.png',
+        CharactersEnemy2 = 'characters/enemy/2.png',
+        CharactersEnemy3 = 'characters/enemy/3.png',
       }
     }
   }

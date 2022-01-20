@@ -3,10 +3,8 @@ import BaseSceneMediator from './BaseSceneMediator';
 import BootScene from './BootScene';
 
 export default class BootSceneMediator extends BaseSceneMediator<BootScene> {
-  public static NAME: string = 'BootSceneMediator';
-
   constructor() {
-    super(BootSceneMediator.NAME, null);
+    super(BootSceneMediator.name, null);
   }
 
   public registerNotificationInterests(): void {
@@ -26,9 +24,9 @@ export default class BootSceneMediator extends BaseSceneMediator<BootScene> {
 
   protected setView(): void {
     const bootScene: BootScene = new BootScene();
-    this.sceneManager.add(BootScene.NAME, bootScene);
+    this.sceneManager.add(BootScene.name, bootScene);
     this.setViewComponent(bootScene);
-    this.sceneManager.start(BootScene.NAME);
+    this.sceneManager.start(BootScene.name);
   }
 
   protected setViewComponentListeners(): void {
@@ -41,8 +39,8 @@ export default class BootSceneMediator extends BaseSceneMediator<BootScene> {
   }
 
   private async onLoadComplete(): Promise<void> {
-    this.sceneManager.stop(BootScene.NAME);
-    this.sceneManager.remove(BootScene.NAME);
+    this.sceneManager.stop(BootScene.name);
+    this.sceneManager.remove(BootScene.name);
     this.facade.sendNotification(BootScene.LOAD_COMPLETE_NOTIFICATION);
   }
 }

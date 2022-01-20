@@ -8,7 +8,6 @@ import {
 } from '../utils/phaser/CustomTypes';
 
 export default class BaseScene extends I18nScene {
-  public static NAME: string = 'BaseScene';
   public static get STARTED_NOTIFICATION(): string {
     return `${this.name}Started`;
   }
@@ -24,8 +23,8 @@ export default class BaseScene extends I18nScene {
   public static get WOKE_NOTIFICATION(): string {
     return `${this.name}Woke`;
   }
-  public static PLAY_SFX_NOTIFICATION: string = `${BaseScene.NAME}PlaySfx`;
-  public static STOP_SFX_NOTIFICATION: string = `${BaseScene.NAME}StopSfx`;
+  public static PLAY_SFX_NOTIFICATION: string = `${BaseScene.name}PlaySfx`;
+  public static STOP_SFX_NOTIFICATION: string = `${BaseScene.name}StopSfx`;
   public static PLAY_SFX_EVENT: string = `playSfx`;
   public static STOP_SFX_EVENT: string = `stopSfx`;
   public add: SceneFactory;

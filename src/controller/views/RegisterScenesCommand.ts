@@ -1,9 +1,9 @@
 import { SimpleCommand } from '@rollinsafary/mvc';
-import { READY_TO_START_NOTIFICATION } from '../constants/GlobalNotifications';
-import BootSceneMediator from '../view/scenes/BootSceneMediator';
-import GameSceneMediator from '../view/scenes/GameSceneMediator';
-import PopupSceneMediator from '../view/scenes/PopupSceneMediator';
-import ServiceSceneMediator from '../view/scenes/ServiceSceneMediator';
+import { READY_TO_START_NOTIFICATION } from '../../constants/GlobalNotifications';
+import BootSceneMediator from '../../view/scenes/BootSceneMediator';
+import GameSceneMediator from '../../view/scenes/GameSceneMediator';
+import PopupSceneMediator from '../../view/scenes/PopupSceneMediator';
+import ServiceSceneMediator from '../../view/scenes/ServiceSceneMediator';
 
 export default class RegisterScenesCommand extends SimpleCommand {
   public execute(): void {
