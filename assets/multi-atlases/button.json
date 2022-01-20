@@ -1,0 +1,188 @@
+{
+	"textures": [
+		{
+			"image": "button-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1350,
+				"h": 119
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "button/rectangle/hovver.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 317,
+						"h": 93
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 317,
+						"h": 93
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 317,
+						"h": 93
+					}
+				},
+				{
+					"filename": "button/rectangle/hover-pip.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 287,
+						"h": 93
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 287,
+						"h": 93
+					},
+					"frame": {
+						"x": 320,
+						"y": 1,
+						"w": 287,
+						"h": 93
+					}
+				},
+				{
+					"filename": "button/rectangle/normal.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 334,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 334,
+						"h": 64
+					},
+					"frame": {
+						"x": 609,
+						"y": 1,
+						"w": 334,
+						"h": 64
+					}
+				},
+				{
+					"filename": "button/rectangle/down-fill.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 289,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 289,
+						"h": 51
+					},
+					"frame": {
+						"x": 609,
+						"y": 67,
+						"w": 289,
+						"h": 51
+					}
+				},
+				{
+					"filename": "button/rectangle/fill.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 289,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 289,
+						"h": 51
+					},
+					"frame": {
+						"x": 900,
+						"y": 67,
+						"w": 289,
+						"h": 51
+					}
+				},
+				{
+					"filename": "button/rectangle/border.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 312,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 312,
+						"h": 64
+					},
+					"frame": {
+						"x": 945,
+						"y": 1,
+						"w": 312,
+						"h": 64
+					}
+				},
+				{
+					"filename": "button/tugle/musicChackboxOff.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 90,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 90,
+						"h": 48
+					},
+					"frame": {
+						"x": 1191,
+						"y": 67,
+						"w": 90,
+						"h": 48
+					}
+				},
+				{
+					"filename": "button/tugle/musicChackboxOn.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 90,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 90,
+						"h": 48
+					},
+					"frame": {
+						"x": 1259,
+						"y": 1,
+						"w": 90,
+						"h": 48
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:6abc1b4129a707a241a1ff71e5295dff:30ebf462d14461711edf3a17b5d49565:34d4436288929be7247425ee6e2024ae$"
+	}
+}

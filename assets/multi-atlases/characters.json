@@ -1,0 +1,125 @@
+{
+	"textures": [
+		{
+			"image": "characters-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 117,
+				"h": 267
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "characters/player/0/0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 104,
+						"h": 192
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 96,
+						"h": 159
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 96,
+						"h": 159
+					}
+				},
+				{
+					"filename": "characters/enemy/1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 65,
+						"h": 48
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 65,
+						"h": 48
+					},
+					"frame": {
+						"x": 1,
+						"y": 162,
+						"w": 65,
+						"h": 48
+					}
+				},
+				{
+					"filename": "characters/enemy/0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 48,
+						"h": 59
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 48,
+						"h": 59
+					},
+					"frame": {
+						"x": 68,
+						"y": 162,
+						"w": 48,
+						"h": 59
+					}
+				},
+				{
+					"filename": "characters/enemy/2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 40,
+						"h": 54
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 40,
+						"h": 54
+					},
+					"frame": {
+						"x": 1,
+						"y": 212,
+						"w": 40,
+						"h": 54
+					}
+				},
+				{
+					"filename": "characters/enemy/3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 46,
+						"h": 40
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 46,
+						"h": 40
+					},
+					"frame": {
+						"x": 43,
+						"y": 223,
+						"w": 46,
+						"h": 40
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:cfd6559f790bc22c4f3d72fd08e27e7f:cf7bdda9b6152fcc14645ff21780cc4f:bb80fc21e429dd40277defbb1a24cdf6$"
+	}
+}
