@@ -1,5 +1,6 @@
-import { Locales, MultiAtlases } from '../../assets';
-import { loadMultiAtlases } from '../utils/assetLoader';
+import { Fonts, Locales, MultiAtlases } from '../../assets';
+import { addBorderConfigs } from '../../constants/NinePatchConfigs';
+import { loadFonts, loadMultiAtlases } from '../utils/assetLoader';
 import BaseScene from './BaseScene';
 
 export default class BootScene extends BaseScene {
@@ -12,10 +13,16 @@ export default class BootScene extends BaseScene {
 
   public preload(): void {
     loadMultiAtlases(this, MultiAtlases);
+    loadFonts(Fonts);
   }
 
   public create(): void {
+    this.addNinePatchConfigs();
     this.i18n.init(Locales.En.name);
     this.events.emit(BootScene.LOAD_COMPLETE_EVENT);
+  }
+
+  protected addNinePatchConfigs(): void {
+    addBorderConfigs(this);
   }
 }

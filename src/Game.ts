@@ -31,7 +31,6 @@ export default class Game extends I18nGame {
 
   public initializeArchitecture(): void {
     const facade = Facade.getInstance(Game.NAME);
-    // facade.initializeFacade();
     facade.sendNotification(STARTUP_NOTIFICATION);
   }
 

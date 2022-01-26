@@ -6,10 +6,10 @@ export enum Orientation {
 }
 
 export let gameConfig: IGameScreenConfig = {
-  designWidth: 1920,
-  designHeight: 1080,
-  canvasWidth: 1920,
-  canvasHeight: 1080,
+  designWidth: 1080,
+  designHeight: 1920,
+  canvasWidth: 1080,
+  canvasHeight: 1920,
   designRatio: 1,
   deviceRatio: 1,
   orientation: Orientation.LANDSCAPE,

@@ -8,14 +8,20 @@ export class Enemies extends Phaser.GameObjects.Container {
 
   constructor(scene: BaseScene) {
     super(scene);
+    this.createEnemy();
+    this.scene.add.existing(this);
   }
 
   public createEnemy(): void {
     if (!this.enemies) {
       this.enemies = [];
     }
+
     const enemy = new Enemy(this.scene);
+    enemy.x = this.scene.width * 0.5;
+    enemy.y = this.scene.height * 0.5;
     this.enemies.push(enemy);
+
     this.add(enemy);
   }
 }

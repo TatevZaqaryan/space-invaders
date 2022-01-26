@@ -185,9 +185,37 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">scene/LoadingBackground.png</key>
-            <key type="filename">scene/border-backround.png</key>
-            <key type="filename">scene/typespase.png</key>
+            <key type="filename">scene/background-border.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>104,211,207,422</rect>
+                <key>scale9Paddings</key>
+                <rect>104,211,207,422</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">scene/background.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>269,549,539,1098</rect>
+                <key>scale9Paddings</key>
+                <rect>269,549,539,1098</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">scene/boarder.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -202,7 +230,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">scene/backround.png</key>
+            <key type="filename">scene/stars.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -211,9 +239,9 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>104,211,207,423</rect>
+                <rect>269,549,539,1097</rect>
                 <key>scale9Paddings</key>
-                <rect>104,211,207,423</rect>
+                <rect>269,549,539,1097</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

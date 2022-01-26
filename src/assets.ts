@@ -1,5 +1,19 @@
 /* AUTO GENERATED FILE. DO NOT MODIFY !!! */
 
+export namespace Fonts {
+  export class Bold {
+    public static Name: string = 'bold';
+    public static TtfURL: string = 'assets/fonts/bold.ttf';
+    /* missing source pair */
+    /* public static UndefinedURL: string =  'assets/fonts/bold.undefined'*/
+  }
+  export class Normal {
+    public static Name: string = 'normal';
+    public static TtfURL: string = 'assets/fonts/normal.ttf';
+    /* missing source pair */
+    /* public static UndefinedURL: string =  'assets/fonts/normal.undefined'*/
+  }
+}
 export namespace Images {
   export class WhitePixel {
     public static Name: string = 'white-pixel';
@@ -132,10 +146,10 @@ export namespace MultiAtlases {
     }
     export namespace Atlas {
       export enum Frames {
-        SceneLoadingBackground = 'scene/LoadingBackground.png',
-        SceneBorderBackround = 'scene/border-backround.png',
-        SceneTypespase = 'scene/typespase.png',
-        SceneBackround = 'scene/backround.png',
+        SceneBackground = 'scene/background.png',
+        SceneStars = 'scene/stars.png',
+        SceneBoarder = 'scene/boarder.png',
+        SceneBackgroundBorder = 'scene/background-border.png',
       }
     }
   }
