@@ -20,6 +20,7 @@ export default class LoadingSceneMediator extends BaseSceneMediator<LoadingScene
       case BootScene.LOAD_COMPLETE_NOTIFICATION:
         this.startScene();
         break;
+
       default:
         this.handleDefaultNotifications(notificationName);
         break;
@@ -30,5 +31,21 @@ export default class LoadingSceneMediator extends BaseSceneMediator<LoadingScene
     const scene: LoadingScene = new LoadingScene();
     this.sceneManager.add(scene.constructor.name, scene);
     this.setViewComponent(scene);
+  }
+
+  protected setViewComponentListeners(): void {
+    super.setViewComponentListeners();
+    this.viewComponent.events.on(
+      LoadingScene.LOADING_COMPLETE_EVENT,
+      this.onLoadComplete,
+      this,
+    );
+  }
+
+  protected onLoadComplete(): void {
+    this.sendNotification(LoadingScene.LOADING_COMPLETE_NOTIFICATION);
+  }
+  private finalizeLoading(): void {
+    this.sceneManager.stop(LoadingScene.NAME);
   }
 }

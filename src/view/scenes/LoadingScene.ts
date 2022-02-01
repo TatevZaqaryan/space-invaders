@@ -5,8 +5,8 @@ import { BackgroundScene } from './BackgroundScene';
 export default class LoadingScene extends BackgroundScene {
   public static NAME: string = 'LoadingScene';
 
-  public static LOADING_FINISH_Notification: string =
-    'loadingFinishNotification';
+  public static LOADING_COMPLETE_EVENT: string = 'loadingComplete';
+  public static LOADING_COMPLETE_NOTIFICATION: string = `${LoadingScene.name}LoadingComplete`;
   protected background: Phaser.GameObjects.Image;
   protected backgroundLoading: Phaser.GameObjects.Image;
   protected backgroundBorder: NinePatch;
@@ -14,7 +14,9 @@ export default class LoadingScene extends BackgroundScene {
   protected loading: Phaser.GameObjects.TileSprite;
   protected stars: Phaser.GameObjects.TileSprite;
   protected text: Phaser.GameObjects.Text;
-  public isLoadingFinish: boolean = false;
+
+  public isLoadingComplete: boolean = false;
+
   constructor() {
     super(LoadingScene.name);
   }
@@ -30,6 +32,7 @@ export default class LoadingScene extends BackgroundScene {
     } catch (error) {
       console.warn(error);
     }
+    this.setListeners();
   }
 
   protected createText(): void {
@@ -79,9 +82,10 @@ export default class LoadingScene extends BackgroundScene {
       height: frame.height,
     });
     this.loading.x = this.width * 0.5 - frame.width * 0.5;
+
     this.add.existing(this.loading);
     this.loading.setOrigin(1, 0.5);
-    this.loading.setScale(-1);
+    this.loading.setScale(-1.5);
     this.tweens.add({
       targets: this.loading,
       width: frame.width,
@@ -89,12 +93,13 @@ export default class LoadingScene extends BackgroundScene {
       ease: Phaser.Math.Easing.Expo.In,
       onUpdate: () => {},
     });
-    // this.load.on(Phaser.Loader.Events.COMPLETE, this.onloadStart, this);
-    // this.load.start();
   }
-
-  private onloadStart(): void {
-    this.isLoadingFinish = true;
-    this.events.emit(LoadingScene.LOADING_FINISH_Notification);
+  protected setListeners(): void {
+    this.load.on(Phaser.Loader.Events.COMPLETE, this.onLoadComplete, this);
+    this.load.start();
+  }
+  private onLoadComplete(): void {
+    this.isLoadingComplete = true;
+    this.events.emit(LoadingScene.LOADING_COMPLETE_EVENT);
   }
 }

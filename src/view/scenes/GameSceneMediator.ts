@@ -1,6 +1,6 @@
 import BaseSceneMediator from './BaseSceneMediator';
-import BootScene from './BootScene';
 import GameScene from './GameScene';
+import MenuScene from './MenuScene';
 
 export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
   constructor() {
@@ -12,14 +12,15 @@ export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
   }
 
   public registerNotificationInterests(): void {
-    this.subscribeToNotifications(BootScene.LOAD_COMPLETE_NOTIFICATION);
+    this.subscribeToNotifications(MenuScene.START_BUTTON_CLICKED_NOTIFICATION);
   }
 
   protected handleNotification(notificationName: string, ...args: any[]): void {
     switch (notificationName) {
-      case BootScene.LOAD_COMPLETE_NOTIFICATION:
+      case MenuScene.START_BUTTON_CLICKED_NOTIFICATION:
         this.startScene();
         break;
+
       default:
         this.handleDefaultNotifications(notificationName, ...args);
         break;
