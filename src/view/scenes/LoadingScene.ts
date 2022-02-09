@@ -5,7 +5,8 @@ import { BackgroundScene } from './BackgroundScene';
 export default class LoadingScene extends BackgroundScene {
   public static NAME: string = 'LoadingScene';
 
-  public static LOADING_COMPLETE_EVENT: string = 'loadingComplete';
+  public static ASSETS_LOAD_COMPLETE_EVENT: string = 'assetsLoadingComplete';
+  public static ASSETS_LOAD_COMPLETE_NOTIFICATION: string = `${LoadingScene.name}AssetsLoadComplete`;
   public static LOADING_COMPLETE_NOTIFICATION: string = `${LoadingScene.name}LoadingComplete`;
   protected background: Phaser.GameObjects.Image;
   protected backgroundLoading: Phaser.GameObjects.Image;
@@ -15,14 +16,23 @@ export default class LoadingScene extends BackgroundScene {
   protected stars: Phaser.GameObjects.TileSprite;
   protected text: Phaser.GameObjects.Text;
 
-  public isLoadingComplete: boolean = false;
-
   constructor() {
     super(LoadingScene.name);
   }
   public create() {
     super.create();
-    this.createComponents();
+    this.request().then((words: string[]) => {
+      this.createComponents();
+      console.log(words);
+    });
+  }
+  public request(): Promise<string[]> {
+    return fetch('https://random-word-api.herokuapp.com/all')
+      .then(function (response) {
+        return response.json();
+      })
+
+      .then((words) => words.filter((word: string) => word.length <= 6));
   }
   public createComponents() {
     this.createBackgroundLoading();
@@ -99,7 +109,6 @@ export default class LoadingScene extends BackgroundScene {
     this.load.start();
   }
   private onLoadComplete(): void {
-    this.isLoadingComplete = true;
-    this.events.emit(LoadingScene.LOADING_COMPLETE_EVENT);
+    this.events.emit(LoadingScene.ASSETS_LOAD_COMPLETE_EVENT);
   }
 }

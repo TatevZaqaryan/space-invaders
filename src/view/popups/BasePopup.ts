@@ -22,6 +22,8 @@ export default class BasePopup extends Phaser.GameObjects.Container {
   public blocker: Phaser.GameObjects.Image;
   public isAlivePromise: Promise<void>;
   public showPromise: Promise<void>;
+  public scene: BaseScene;
+
   protected closeButton: Phaser.GameObjects.GameObject;
 
   constructor() {

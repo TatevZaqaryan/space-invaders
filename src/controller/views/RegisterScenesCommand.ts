@@ -6,6 +6,7 @@ import LoadingSceneMediator from '../../view/scenes/LoadingSceneMediator';
 import MenuSceneMediator from '../../view/scenes/MenuSceneMediator';
 import PopupSceneMediator from '../../view/scenes/PopupSceneMediator';
 import ServiceSceneMediator from '../../view/scenes/ServiceSceneMediator';
+import { SettingsSceneMediator } from '../../view/scenes/SettingsSceneMediator';
 
 export default class RegisterScenesCommand extends SimpleCommand {
   public execute(): void {
@@ -14,8 +15,8 @@ export default class RegisterScenesCommand extends SimpleCommand {
     this.facade.registerMediator(new BootSceneMediator());
     this.facade.registerMediator(new LoadingSceneMediator());
     this.facade.registerMediator(new MenuSceneMediator());
-
     this.facade.registerMediator(new GameSceneMediator());
+    this.facade.registerMediator(new SettingsSceneMediator());
 
     this.sendNotification(READY_TO_START_NOTIFICATION);
   }

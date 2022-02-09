@@ -6,7 +6,9 @@ export default class MenuScene extends BackgroundScene {
   public static NAME: string = 'MenuScene';
 
   public static START_BUTTON_CLICKED_EVENT: string = 'startButtonClicked';
-  public static START_BUTTON_CLICKED_NOTIFICATION: string = `${MenuScene.NAME}StartButtonClicked`;
+  public static START_BUTTON_CLICKED_NOTIFICATION: string = `${MenuScene.NAME}StartIconClicked`;
+  public static SETTINGS_ICON_CLICKED_EVENT: string = 'settingsButtonClicked';
+  public static SETTINGS_ICON_CLICKED_NOTIFICATION: string = `${MenuScene.NAME}SettingsIconClicked`;
   protected text: Phaser.GameObjects.Text;
   protected createContinueText: Phaser.GameObjects.Text;
   protected createStartText: Phaser.GameObjects.Text;
@@ -95,6 +97,7 @@ export default class MenuScene extends BackgroundScene {
       frame: MultiAtlases.Icon.Atlas.Frames.IconSetings,
     });
     this.add.existing(this.settingsIcon);
+    this.settingsIcon.setInteractive();
   }
 
   protected setListeners(): void {
@@ -103,10 +106,18 @@ export default class MenuScene extends BackgroundScene {
       this.onStartButtonClick,
       this,
     );
-    // this.startButton.on(Phaser.Input.Events.POINTER_OVER, this.onOver, this);
+    this.settingsIcon.on(
+      Phaser.Input.Events.POINTER_UP,
+      this.onClickSettingsIcon,
+      this,
+    );
   }
 
   protected onStartButtonClick(): void {
     this.events.emit(MenuScene.START_BUTTON_CLICKED_EVENT);
+  }
+
+  protected onClickSettingsIcon(): void {
+    this.events.emit(MenuScene.SETTINGS_ICON_CLICKED_EVENT);
   }
 }

@@ -16,9 +16,6 @@ export default class Enemy extends Phaser.GameObjects.Container {
     this.createEnemy();
     this.creteTextBackground();
     this.createText();
-    this.request().then((words: string[]) => {
-      console.warn(words);
-    });
   }
   public createEnemy(): void {
     const randomIndex: number = Phaser.Math.Between(0, 3);
@@ -35,8 +32,8 @@ export default class Enemy extends Phaser.GameObjects.Container {
   }
   protected creteTextBackground(): void {
     this.textBackground = this.scene.make.image({
-      x: 0,
-      y: 0,
+      x: this.enemy.x,
+      y: this.enemy.y + 50,
       key: MultiAtlases.Board.Atlas.Name,
       frame: MultiAtlases.Board.Atlas.Frames.BoardTextBoard,
     });
@@ -44,22 +41,23 @@ export default class Enemy extends Phaser.GameObjects.Container {
   }
 
   protected createText(): void {
-    const style: Phaser.Types.GameObjects.Text.TextStyle = {
-      fontSize: '20px',
-    };
-    this.text = this.scene.make.extText({
-      x: this.textBackground.x,
-      y: this.textBackground.y,
-      text: 'Barev',
-      style,
-    });
-    this.add(this.text);
-  }
-  public request(): Promise<string[]> {
-    return fetch('https://random-word-api.herokuapp.com/all')
-      .then(function (response) {
-        return response.json();
-      })
-      .then((words) => words.filter((word: string) => word.length <= 10));
+    // textLoad.request().then((words: string[]) => {
+    //   console.log(words.length);
+    //   let min = Math.random() * 200;
+    //   let max = Math.random() * 800;
+    //   let number = Phaser.Math.Between(min, max);
+    //   const style: Phaser.Types.GameObjects.Text.TextStyle = {
+    //     fontSize: '22 px',
+    //     align: 'center',
+    //   };
+    //   this.text = this.scene.make.extText({
+    //     x: this.textBackground.x,
+    //     y: this.textBackground.y,
+    //     text: `${words[number]}`,
+    //     style,
+    //   });
+    //   this.add(this.text);
+    //   this.text.setAlign('center');
+    // });
   }
 }

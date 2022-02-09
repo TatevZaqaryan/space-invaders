@@ -36,11 +36,17 @@ export default class MenuSceneMediator extends BaseSceneMediator<MenuScene> {
       this.onStartButtonClick,
       this,
     );
+    this.viewComponent.events.on(
+      MenuScene.SETTINGS_ICON_CLICKED_EVENT,
+      this.onSettingsIconClick,
+      this,
+    );
   }
 
   protected onStartButtonClick(): void {
-    console.log('barev');
-
     this.sendNotification(MenuScene.START_BUTTON_CLICKED_NOTIFICATION);
+  }
+  protected onSettingsIconClick(): void {
+    this.sendNotification(MenuScene.SETTINGS_ICON_CLICKED_NOTIFICATION);
   }
 }

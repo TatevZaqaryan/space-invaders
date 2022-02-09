@@ -32,4 +32,16 @@ export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
     this.sceneManager.add(GameScene.name, scene);
     this.setViewComponent(scene);
   }
+  protected setViewComponentListeners(): void {
+    super.setViewComponentListeners();
+    this.viewComponent.events.on(
+      GameScene.SETTINGS_BUTTON_CLICKED_EVENT,
+      this.onSettingsButtonClicked,
+      this,
+    );
+  }
+
+  protected onSettingsButtonClicked(): void {
+    this.sendNotification(GameScene.SETTINGS_BUTTON_CLICKED_NOTIFICATION);
+  }
 }

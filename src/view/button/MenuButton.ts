@@ -5,6 +5,7 @@ import BaseScene from '../scenes/BaseScene';
 export class MenuButton extends Phaser.GameObjects.Container {
   public border: NinePatch;
   public buttonFill: NinePatch;
+  protected buttonDownFill: Phaser.GameObjects.Image;
   protected text: Phaser.GameObjects.Text;
   protected star: Phaser.GameObjects.Image;
 
@@ -18,7 +19,7 @@ export class MenuButton extends Phaser.GameObjects.Container {
     this.creteButtonBorder();
     this.setSize(this.border.width, this.border.height);
     this.createText();
-    this.createStarsButton();
+    this.createStars();
     this.setListeners();
   }
   protected creteButtonBorder(): void {
@@ -60,22 +61,38 @@ export class MenuButton extends Phaser.GameObjects.Container {
     this.add(this.text);
     this.text.setOrigin(0.5);
   }
-  protected createStarsButton(): void {
+  protected createStars(): void {
     this.star = this.scene.make.image({
       x: 0,
       y: 0,
       key: MultiAtlases.Button.Atlas.Name,
       frame: MultiAtlases.Button.Atlas.Frames.ButtonRectangleHoverPip,
-      width: this.displayWidth * 2,
-      height: this.displayHeight * 2,
     });
     this.add(this.star);
     this.star.setScale(2);
     this.star.setVisible(false);
   }
+  protected cerateDownFill() {
+    this.buttonDownFill = this.scene.make.image({
+      x: 0,
+      y: 0,
+      key: MultiAtlases.Button.Atlas.Name,
+      frame: MultiAtlases.Button.Atlas.Frames.ButtonRectangleFill,
+      width: 500,
+      height: 130,
+    });
+    this.add(this.buttonDownFill);
+    this.buttonDownFill.setVisible(false);
+  }
   protected setListeners(): void {
     this.on(Phaser.Input.Events.POINTER_OVER, this.onOver, this);
     this.on(Phaser.Input.Events.POINTER_OUT, this.onOverOut, this);
+    this.on(Phaser.Input.Events.POINTER_DOWN, this.onDown, this);
+  }
+  protected onDown(): void {
+    this.buttonDownFill.setFrame(
+      MultiAtlases.Button.Atlas.Frames.ButtonRectangleFill,
+    );
   }
   protected onOver(): void {
     this.star.setVisible(true);

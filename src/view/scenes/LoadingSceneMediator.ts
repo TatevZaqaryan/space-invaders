@@ -36,16 +36,17 @@ export default class LoadingSceneMediator extends BaseSceneMediator<LoadingScene
   protected setViewComponentListeners(): void {
     super.setViewComponentListeners();
     this.viewComponent.events.on(
-      LoadingScene.LOADING_COMPLETE_EVENT,
-      this.onLoadComplete,
+      LoadingScene.ASSETS_LOAD_COMPLETE_EVENT,
+      this.onAssetsLoadComplete,
       this,
     );
   }
 
-  protected onLoadComplete(): void {
-    this.sendNotification(LoadingScene.LOADING_COMPLETE_NOTIFICATION);
+  protected onAssetsLoadComplete(): void {
+    this.sendNotification(LoadingScene.ASSETS_LOAD_COMPLETE_NOTIFICATION);
   }
   private finalizeLoading(): void {
     this.sceneManager.stop(LoadingScene.NAME);
+    this.sendNotification(LoadingScene.LOADING_COMPLETE_NOTIFICATION);
   }
 }

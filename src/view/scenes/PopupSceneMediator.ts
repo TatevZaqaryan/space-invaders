@@ -1,5 +1,6 @@
 import PopupManager from '../utils/PopupManager';
 import BaseSceneMediator from './BaseSceneMediator';
+import BootScene from './BootScene';
 import PopupScene from './PopupScene';
 
 export default class PopupSceneMediator extends BaseSceneMediator<PopupScene> {
@@ -28,13 +29,19 @@ export default class PopupSceneMediator extends BaseSceneMediator<PopupScene> {
       // case PreloadScene.LOAD_COMPLETE_NOTIFICATION:
       //   this.registerGamePopups();
       //   break;
+      case BootScene.LOAD_COMPLETE_NOTIFICATION:
+        this.setView();
+        break;
+
       default:
         console.warn(`${notificationName} is unhandled!`);
         break;
     }
   }
 
-  public onSceneReady(): void {}
+  public onSceneReady(): void {
+    this.sendNotification(PopupScene.REGISTERED_NOTIFICATION);
+  }
 
   public onSceneWake(): void {
     this.sceneManager.bringToTop(PopupScene.NAME);
