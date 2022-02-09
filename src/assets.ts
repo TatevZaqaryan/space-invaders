@@ -93,7 +93,7 @@ export namespace MultiAtlases {
     }
     export namespace Atlas {
       export enum Frames {
-        IconSetings = 'icon/setings.png',
+        IconSettings = 'icon/settings.png',
         IconMute = 'icon/mute.png',
         IconUnmute = 'icon/unmute.png',
       }
@@ -121,20 +121,7 @@ export namespace MultiAtlases {
     export namespace Atlas {
       export enum Frames {
         LevelsBackground = 'levels/background.png',
-        LevelsBackgrounFill = 'levels/backgroun-fill.png',
-      }
-    }
-  }
-  export namespace Levelss {
-    export class Atlas {
-      public static Name: string = 'levelss';
-      public static AtlasURL: string = 'assets/multi-atlases/levelss.json';
-      public static TextureURL: string = 'assets/multi-atlases/';
-    }
-    export namespace Atlas {
-      export enum Frames {
-        LevelsBackground = 'levels/background.png',
-        LevelsBackgrounFill = 'levels/backgroun-fill.png',
+        LevelsBackgroundFill = 'levels/background-fill.png',
       }
     }
   }
@@ -149,18 +136,6 @@ export namespace MultiAtlases {
         LoadingLoadingFinish = 'loading/loading-finish.png',
         LoadingLoading2 = 'loading/loading2.png',
         LoadingLoading1 = 'loading/loading1.png',
-      }
-    }
-  }
-  export namespace Main {
-    export class Atlas {
-      public static Name: string = 'main';
-      public static AtlasURL: string = 'assets/multi-atlases/main.json';
-      public static TextureURL: string = 'assets/multi-atlases/';
-    }
-    export namespace Atlas {
-      export enum Frames {
-        MainWhitePixel = 'main/white-pixel.png',
       }
     }
   }
@@ -183,19 +158,6 @@ export namespace MultiAtlases {
     export class Atlas {
       public static Name: string = 'weapons';
       public static AtlasURL: string = 'assets/multi-atlases/weapons.json';
-      public static TextureURL: string = 'assets/multi-atlases/';
-    }
-    export namespace Atlas {
-      export enum Frames {
-        WeaponsRocket = 'weapons/rocket.png',
-        WeaponsBullet = 'weapons/bullet.png',
-      }
-    }
-  }
-  export namespace Weapoons {
-    export class Atlas {
-      public static Name: string = 'weapoons';
-      public static AtlasURL: string = 'assets/multi-atlases/weapoons.json';
       public static TextureURL: string = 'assets/multi-atlases/';
     }
     export namespace Atlas {

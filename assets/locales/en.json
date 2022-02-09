@@ -1,1 +1,4 @@
-{}
+{
+  "loading.scene.message.loading": "Loading",
+  "loading.scene.message.retrieving": "Retrieving Data"
+}

@@ -31,7 +31,7 @@
 					}
 				},
 				{
-					"filename": "levels/backgroun-fill.png",
+					"filename": "levels/background-fill.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -57,6 +57,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:62933bc767b9c8ec8a58a18f335fdce1:4feb4b07a80b3c47d9440f468e643033:f72cb6128cb03be5916e70b45698591d$"
+		"smartupdate": "$TexturePacker:SmartUpdate:81c9e87e7beeb115bb43bcc9bc2de4cb:f20b299565657b5337f176568d571a3f:f72cb6128cb03be5916e70b45698591d$"
 	}
 }

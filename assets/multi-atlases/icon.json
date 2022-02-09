@@ -10,7 +10,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "icon/setings.png",
+					"filename": "icon/settings.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -78,6 +78,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:54324252866d5f2e12fcabc26b25007f:445b99d64e9a6fad63e98fa2c05a1695:46074e015d6b1f933ba11313d7ede7f0$"
+		"smartupdate": "$TexturePacker:SmartUpdate:45f9da8ba04d980d54669ebc67d1c75f:445b99d64e9a6fad63e98fa2c05a1695:46074e015d6b1f933ba11313d7ede7f0$"
 	}
 }

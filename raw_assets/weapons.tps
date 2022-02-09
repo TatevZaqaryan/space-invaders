@@ -136,7 +136,7 @@
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../assets/multi-atlases/main.json</filename>
+                <filename>../assets/multi-atlases/weapons.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -185,7 +185,7 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">main</key>
+            <key type="filename">weapons/bullet.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -194,16 +194,16 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>0,0,0,0</rect>
+                <rect>2,10,5,20</rect>
                 <key>scale9Paddings</key>
-                <rect>0,0,0,0</rect>
+                <rect>2,10,5,20</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>main</filename>
+            <filename>weapons</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

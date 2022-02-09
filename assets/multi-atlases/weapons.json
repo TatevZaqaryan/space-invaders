@@ -4,32 +4,11 @@
 			"image": "weapons-0.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 109,
-				"h": 161
+				"w": 11,
+				"h": 42
 			},
 			"scale": 1,
 			"frames": [
-				{
-					"filename": "weapons/rocket.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 104,
-						"h": 192
-					},
-					"spriteSourceSize": {
-						"x": 3,
-						"y": 0,
-						"w": 96,
-						"h": 159
-					},
-					"frame": {
-						"x": 1,
-						"y": 1,
-						"w": 96,
-						"h": 159
-					}
-				},
 				{
 					"filename": "weapons/bullet.png",
 					"rotated": false,
@@ -45,7 +24,7 @@
 						"h": 40
 					},
 					"frame": {
-						"x": 99,
+						"x": 1,
 						"y": 1,
 						"w": 9,
 						"h": 40
@@ -57,6 +36,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:bfc4e20f8f5851ac802e3552cb76cd06:61eac4eb4c03a28594549f162d47c6a3:4c8e7650d4debf86f4e1b9b0727e1ef7$"
+		"smartupdate": "$TexturePacker:SmartUpdate:c5c5caf36a3470df8a81c35fc96d4dab:5c79fbbf715051371fac9f9f229d8cb0:4c8e7650d4debf86f4e1b9b0727e1ef7$"
 	}
 }
