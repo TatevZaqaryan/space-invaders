@@ -1,3 +1,4 @@
+import DictionaryVOProxy from '../../model/dictionary/DictionaryVOProxy';
 import BaseSceneMediator from './BaseSceneMediator';
 import BootScene from './BootScene';
 import LoadingScene from './LoadingScene';
@@ -13,14 +14,20 @@ export default class LoadingSceneMediator extends BaseSceneMediator<LoadingScene
     this.setView();
   }
   public registerNotificationInterests(): void {
-    this.subscribeToNotifications(BootScene.LOAD_COMPLETE_NOTIFICATION);
+    this.subscribeToNotifications(
+      BootScene.LOAD_COMPLETE_NOTIFICATION,
+      DictionaryVOProxy.REGISTERED,
+    );
   }
+
   public handleNotification(notificationName: string): void {
     switch (notificationName) {
       case BootScene.LOAD_COMPLETE_NOTIFICATION:
         this.startScene();
         break;
-
+      case DictionaryVOProxy.REGISTERED:
+        this.finalizeLoading();
+        break;
       default:
         this.handleDefaultNotifications(notificationName);
         break;
@@ -43,10 +50,10 @@ export default class LoadingSceneMediator extends BaseSceneMediator<LoadingScene
   }
 
   protected onAssetsLoadComplete(): void {
-    this.sendNotification(LoadingScene.ASSETS_LOAD_COMPLETE_NOTIFICATION);
+    this.sendNotification(LoadingScene.ASSETS_LOAD_COMPLETE);
   }
   private finalizeLoading(): void {
     this.sceneManager.stop(LoadingScene.NAME);
-    this.sendNotification(LoadingScene.LOADING_COMPLETE_NOTIFICATION);
+    this.sendNotification(LoadingScene.LOADING_COMPLETE);
   }
 }

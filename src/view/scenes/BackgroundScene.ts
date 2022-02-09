@@ -14,6 +14,7 @@ export class BackgroundScene extends BaseScene {
     this.createBackgroundBorder();
     this.createBorder();
   }
+
   protected createBackground(): void {
     this.background = this.make.image({
       x: this.width * 0.5,

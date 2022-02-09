@@ -94,7 +94,7 @@ export class Levels extends Phaser.GameObjects.Container {
       x: this.width * 0.7,
       y: this.height * 0.4,
       key: MultiAtlases.Levels.Atlas.Name,
-      frame: MultiAtlases.Levels.Atlas.Frames.LevelsBackgrounFill,
+      frame: MultiAtlases.Levels.Atlas.Frames.LevelsBackgroundFill,
     });
     this.add(this.createBackgroundFill);
   }

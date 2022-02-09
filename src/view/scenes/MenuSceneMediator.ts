@@ -12,11 +12,11 @@ export default class MenuSceneMediator extends BaseSceneMediator<MenuScene> {
     this.setView();
   }
   registerNotificationInterests(): void {
-    this.subscribeToNotifications(LoadingScene.LOADING_COMPLETE_NOTIFICATION);
+    this.subscribeToNotifications(LoadingScene.LOADING_COMPLETE);
   }
   protected handleNotification(notificationName: string, ...args: any[]): void {
     switch (notificationName) {
-      case LoadingScene.LOADING_COMPLETE_NOTIFICATION:
+      case LoadingScene.LOADING_COMPLETE:
         this.startScene();
         break;
       default:

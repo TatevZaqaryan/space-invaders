@@ -92,7 +92,7 @@ export class TextSize extends Phaser.GameObjects.Container {
       x: this.createBackground.x,
       y: this.createBackground.y,
       key: MultiAtlases.Levels.Atlas.Name,
-      frame: MultiAtlases.Levels.Atlas.Frames.LevelsBackgrounFill,
+      frame: MultiAtlases.Levels.Atlas.Frames.LevelsBackgroundFill,
     });
     this.add(this.createBackgroundFill);
   }

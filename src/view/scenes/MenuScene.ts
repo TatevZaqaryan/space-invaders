@@ -94,7 +94,7 @@ export default class MenuScene extends BackgroundScene {
       x: this.width - 80,
       y: this.height - 100,
       key: MultiAtlases.Icon.Atlas.Name,
-      frame: MultiAtlases.Icon.Atlas.Frames.IconSetings,
+      frame: MultiAtlases.Icon.Atlas.Frames.IconSettings,
     });
     this.add.existing(this.settingsIcon);
     this.settingsIcon.setInteractive();

@@ -51,7 +51,7 @@ export default class GameScene extends BackgroundScene {
       x: this.width - 100,
       y: 100,
       key: MultiAtlases.Icon.Atlas.Name,
-      frame: MultiAtlases.Icon.Atlas.Frames.IconSetings,
+      frame: MultiAtlases.Icon.Atlas.Frames.IconSettings,
     });
     this.add.existing(this.settingsIcon);
     this.settingsIcon.setInteractive();

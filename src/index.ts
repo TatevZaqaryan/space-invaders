@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', startGame, false);
 
 function startGame() {
   Facade.getInstance = GameFacade.getInstance;
-  new Game();
+  (window as any).game = new Game();
 }

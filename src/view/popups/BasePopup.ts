@@ -1,4 +1,4 @@
-import { MultiAtlases } from '../../assets';
+import { Images } from '../../assets';
 import { gameConfig } from '../../constants/GameConfig';
 import Game from '../../Game';
 import BaseScene from '../scenes/BaseScene';
@@ -197,8 +197,7 @@ export default class BasePopup extends Phaser.GameObjects.Container {
     this.blocker = this.scene.make.image({
       x: 0,
       y: 0,
-      key: MultiAtlases.Main.Atlas.Name,
-      frame: MultiAtlases.Main.Atlas.Frames.MainWhitePixel,
+      key: Images.WhitePixel.Name,
     });
     this.blocker.setScale(gameConfig.canvasWidth, gameConfig.canvasHeight);
     this.blocker.setOrigin(0);

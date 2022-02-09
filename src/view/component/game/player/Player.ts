@@ -41,7 +41,7 @@ export class Player extends Phaser.GameObjects.Container {
       x: 0,
       y: 0,
       key: MultiAtlases.Weapons.Atlas.Name,
-      frame: MultiAtlases.Weapons.Atlas.Frames.WeaponsRocket,
+      frame: MultiAtlases.Weapons.Atlas.Frames.WeaponsBullet,
     });
     this.add(this.skin);
   }
