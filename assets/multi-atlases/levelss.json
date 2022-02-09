@@ -1,0 +1,62 @@
+{
+	"textures": [
+		{
+			"image": "levelss-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 421,
+				"h": 8
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "levels/background.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 334,
+						"h": 6
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 334,
+						"h": 6
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 334,
+						"h": 6
+					}
+				},
+				{
+					"filename": "levels/backgroun-fill.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 83,
+						"h": 6
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 83,
+						"h": 6
+					},
+					"frame": {
+						"x": 337,
+						"y": 1,
+						"w": 83,
+						"h": 6
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:f26ad9baa0b23c290f2f1387cb47b532:f20b299565657b5337f176568d571a3f:dc2b88fca40151973286ab11550de086$"
+	}
+}

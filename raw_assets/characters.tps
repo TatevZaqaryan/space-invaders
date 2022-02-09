@@ -136,7 +136,7 @@
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../assets/multi-atlases/characters.json</filename>
+                <filename>../assets/multi-atlases/levelss.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -185,7 +185,7 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">characters/enemy/0.png</key>
+            <key type="filename">levels/backgroun-fill.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -194,13 +194,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>12,15,24,29</rect>
+                <rect>21,2,41,3</rect>
                 <key>scale9Paddings</key>
-                <rect>12,15,24,29</rect>
+                <rect>21,2,41,3</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">characters/enemy/1.png</key>
+            <key type="filename">levels/background.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -209,61 +209,16 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>16,12,33,24</rect>
+                <rect>84,2,167,3</rect>
                 <key>scale9Paddings</key>
-                <rect>16,12,33,24</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">characters/enemy/2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>10,14,20,27</rect>
-                <key>scale9Paddings</key>
-                <rect>10,14,20,27</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">characters/enemy/3.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>12,10,23,20</rect>
-                <key>scale9Paddings</key>
-                <rect>12,10,23,20</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">characters/player/0/0.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>26,48,52,96</rect>
-                <key>scale9Paddings</key>
-                <rect>26,48,52,96</rect>
+                <rect>84,2,167,3</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>characters</filename>
+            <filename>levels</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -112,6 +112,32 @@ export namespace MultiAtlases {
       }
     }
   }
+  export namespace Levels {
+    export class Atlas {
+      public static Name: string = 'levels';
+      public static AtlasURL: string = 'assets/multi-atlases/levels.json';
+      public static TextureURL: string = 'assets/multi-atlases/';
+    }
+    export namespace Atlas {
+      export enum Frames {
+        LevelsBackground = 'levels/background.png',
+        LevelsBackgrounFill = 'levels/backgroun-fill.png',
+      }
+    }
+  }
+  export namespace Levelss {
+    export class Atlas {
+      public static Name: string = 'levelss';
+      public static AtlasURL: string = 'assets/multi-atlases/levelss.json';
+      public static TextureURL: string = 'assets/multi-atlases/';
+    }
+    export namespace Atlas {
+      export enum Frames {
+        LevelsBackground = 'levels/background.png',
+        LevelsBackgrounFill = 'levels/backgroun-fill.png',
+      }
+    }
+  }
   export namespace Loading {
     export class Atlas {
       public static Name: string = 'loading';
@@ -162,6 +188,18 @@ export namespace MultiAtlases {
     export namespace Atlas {
       export enum Frames {
         WeaponsRocket = 'weapons/rocket.png',
+        WeaponsBullet = 'weapons/bullet.png',
+      }
+    }
+  }
+  export namespace Weapoons {
+    export class Atlas {
+      public static Name: string = 'weapoons';
+      public static AtlasURL: string = 'assets/multi-atlases/weapoons.json';
+      public static TextureURL: string = 'assets/multi-atlases/';
+    }
+    export namespace Atlas {
+      export enum Frames {
         WeaponsBullet = 'weapons/bullet.png',
       }
     }
