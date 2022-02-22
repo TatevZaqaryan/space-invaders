@@ -11,8 +11,8 @@ export class Player extends Phaser.GameObjects.Container {
   protected speedY: number = 3;
   protected bullets: Bullet[] = [];
   protected space: Phaser.Input.Keyboard.Key;
-  protected bulletVelocity: number = Phaser.Math.Between(3, 5);
-
+  protected bulletVelocity: number = Phaser.Math.Between(6, 8);
+  protected bullet: Bullet;
   constructor(scene: Phaser.Scene) {
     super(scene);
     this.createComponents();
@@ -26,7 +26,6 @@ export class Player extends Phaser.GameObjects.Container {
 
   protected createComponents(): void {
     this.createSkin();
-    //this.createBullet();
 
     this.setSize(this.skin.width, this.skin.height);
   }
@@ -40,8 +39,8 @@ export class Player extends Phaser.GameObjects.Container {
     this.skin = this.scene.make.sprite({
       x: 0,
       y: 0,
-      key: MultiAtlases.Weapons.Atlas.Name,
-      frame: MultiAtlases.Weapons.Atlas.Frames.WeaponsBullet,
+      key: MultiAtlases.Characters.Atlas.Name,
+      frame: MultiAtlases.Characters.Atlas.Frames.CharactersPlayer00,
     });
     this.add(this.skin);
   }
@@ -85,6 +84,7 @@ export class Player extends Phaser.GameObjects.Container {
       bullet.y -= this.bulletVelocity;
     });
   }
+
   protected setListeners(): void {
     this.left = this.scene.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.LEFT,

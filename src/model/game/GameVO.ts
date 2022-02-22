@@ -1,20 +1,25 @@
+import StatisticsVO from './StatisticsVO';
+
 export class GameVO {
-  statistics: IStatistic;
-  player: IPlayer;
-  enemies: IEnemy[];
+  public statistics: StatisticsVO;
+  public player: IPlayer;
+  public enemies: IEnemy[];
+  public target: IEnemy;
+  constructor() {
+    this.statistics = new StatisticsVO();
+    this.player = null;
+    this.enemies = [];
+    this.target = null;
+  }
 }
 
-export interface IStatistic {
-  Shots: number;
-  Missed: number;
-  Score: number;
-}
 export interface IPlayer {
   skin?: number;
   life: number;
 }
 export interface IEnemy {
-  id: number;
+  id: string;
   word: string;
+  left: string;
   velocity: number;
 }

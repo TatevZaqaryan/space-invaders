@@ -87,7 +87,7 @@ export class MenuButton extends Phaser.GameObjects.Container {
   protected setListeners(): void {
     this.on(Phaser.Input.Events.POINTER_OVER, this.onOver, this);
     this.on(Phaser.Input.Events.POINTER_OUT, this.onOverOut, this);
-    this.on(Phaser.Input.Events.POINTER_DOWN, this.onDown, this);
+    // this.on(Phaser.Input.Events.POINTER_DOWN, this.onDown, this);
   }
   protected onDown(): void {
     this.buttonDownFill.setFrame(

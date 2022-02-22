@@ -1,6 +1,6 @@
+import { GameVOProxy } from '../../model/game/GameVOProxy';
 import BaseSceneMediator from './BaseSceneMediator';
 import GameScene from './GameScene';
-import MenuScene from './MenuScene';
 
 export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
   constructor() {
@@ -12,12 +12,12 @@ export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
   }
 
   public registerNotificationInterests(): void {
-    this.subscribeToNotifications(MenuScene.START_BUTTON_CLICKED_NOTIFICATION);
+    this.subscribeToNotifications(GameVOProxy.REGISTERED);
   }
 
   protected handleNotification(notificationName: string, ...args: any[]): void {
     switch (notificationName) {
-      case MenuScene.START_BUTTON_CLICKED_NOTIFICATION:
+      case GameVOProxy.REGISTERED:
         this.startScene();
         break;
 
@@ -39,9 +39,27 @@ export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
       this.onSettingsButtonClicked,
       this,
     );
+    this.viewComponent.events.on(
+      GameScene.UPDATE_ENEMIES_EVENT,
+      this.onUpdateEnemies,
+      this,
+    );
+    this.viewComponent.events.on(
+      GameScene.KEY_TYPED_EVENT,
+      this.onKeyTyped,
+      this,
+    );
   }
 
   protected onSettingsButtonClicked(): void {
     this.sendNotification(GameScene.SETTINGS_BUTTON_CLICKED_NOTIFICATION);
+  }
+
+  protected onUpdateEnemies(): void {
+    this.sendNotification(GameScene.UPDATE_ENEMIES);
+  }
+
+  protected onKeyTyped(key: string): void {
+    this.sendNotification(GameScene.KEY_TYPED, key);
   }
 }

@@ -10,6 +10,19 @@ export default class DictionaryVOProxy extends Proxy<DictionaryVO> {
     super(DictionaryVOProxy.NAME, new DictionaryVO(words));
   }
 
+  public getWords(count: number, maxLength: number): string[] {
+    const words: string[] = [];
+    for (let i: number = 0; i < count; i++) {
+      const randomLength: number = Phaser.Math.Between(
+        Math.floor(maxLength / 2),
+        maxLength,
+      );
+      const word = pickAny(this.vo.wordsMap.get(randomLength));
+      words.push(word);
+    }
+    return words;
+  }
+
   public onRegister(): void {
     this.sendNotification(DictionaryVOProxy.REGISTERED);
   }

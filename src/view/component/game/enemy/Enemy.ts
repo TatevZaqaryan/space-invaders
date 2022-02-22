@@ -1,26 +1,43 @@
 import { MultiAtlases } from '../../../../assets';
+import { IEnemy } from '../../../../model/game/GameVO';
 import BaseScene from '../../../scenes/BaseScene';
 import GameScene from '../../../scenes/GameScene';
+import EnemyLabel from './EnemyLabel';
 
 export default class Enemy extends Phaser.GameObjects.Container {
   public scene: GameScene;
-  protected enemy: Phaser.GameObjects.Image;
-  protected textBackground: Phaser.GameObjects.Image;
-  protected text: Phaser.GameObjects.Text;
+  public config: IEnemy;
+  protected skin: Phaser.GameObjects.Image;
+  protected label: EnemyLabel;
 
-  constructor(scene: BaseScene) {
+  constructor(scene: BaseScene, config: IEnemy) {
     super(scene);
+    this.config = config;
     this.createComponents();
   }
-  protected createComponents(): void {
-    this.createEnemy();
-    this.creteTextBackground();
-    this.createText();
-  }
-  public createEnemy(): void {
-    const randomIndex: number = Phaser.Math.Between(0, 3);
 
-    this.enemy = this.scene.make.image({
+  public updateByConfig(): void {
+    this.label.updateByConfig();
+    if (this.config.left.length === 0) {
+      this.dye();
+    }
+  }
+
+  public update(time?: number, delta?: number): void {
+    super.update(time, delta);
+    this.y += this.config.velocity;
+    this.y > this.scene.height * 0.88 && this.destroy();
+  }
+
+  protected createComponents(): void {
+    this.createSkin();
+    this.setSize(this.skin.width, this.skin.height);
+    this.createLabel();
+  }
+
+  protected createSkin(): void {
+    const randomIndex: number = Phaser.Math.Between(0, 3);
+    this.skin = this.scene.make.image({
       x: 0,
       y: 0,
       key: MultiAtlases.Characters.Atlas.Name,
@@ -28,36 +45,16 @@ export default class Enemy extends Phaser.GameObjects.Container {
         `CharactersEnemy${randomIndex}`
       ],
     });
-    this.add(this.enemy);
-  }
-  protected creteTextBackground(): void {
-    this.textBackground = this.scene.make.image({
-      x: this.enemy.x,
-      y: this.enemy.y + 50,
-      key: MultiAtlases.Board.Atlas.Name,
-      frame: MultiAtlases.Board.Atlas.Frames.BoardTextBoard,
-    });
-    this.add(this.textBackground);
+    this.add(this.skin);
   }
 
-  protected createText(): void {
-    // textLoad.request().then((words: string[]) => {
-    //   console.log(words.length);
-    //   let min = Math.random() * 200;
-    //   let max = Math.random() * 800;
-    //   let number = Phaser.Math.Between(min, max);
-    //   const style: Phaser.Types.GameObjects.Text.TextStyle = {
-    //     fontSize: '22 px',
-    //     align: 'center',
-    //   };
-    //   this.text = this.scene.make.extText({
-    //     x: this.textBackground.x,
-    //     y: this.textBackground.y,
-    //     text: `${words[number]}`,
-    //     style,
-    //   });
-    //   this.add(this.text);
-    //   this.text.setAlign('center');
-    // });
+  protected createLabel(): void {
+    this.label = new EnemyLabel(this.scene, this.config);
+    this.add(this.label);
+    this.label.y = -this.height * 0.5 - this.label.height * 0.5 - 10;
+  }
+
+  protected dye(): void {
+    this.destroy();
   }
 }

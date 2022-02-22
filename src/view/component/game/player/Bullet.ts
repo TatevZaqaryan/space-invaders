@@ -4,8 +4,7 @@ import BaseScene from '../../../scenes/BaseScene';
 export class Bullet extends Phaser.GameObjects.Sprite {
   protected bullet: Phaser.GameObjects.Image;
   protected space: Phaser.Input.Keyboard.Key;
-  protected bulletVelocity: number = 3;
-
+  protected bulletVelocity: number = 2;
   public uuid: string;
   constructor(scene: BaseScene) {
     super(

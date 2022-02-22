@@ -59,5 +59,6 @@ export class BackgroundScene extends BaseScene {
       height: this.height,
     });
     this.add.existing(this.border);
+    this.border.setDepth(0.01);
   }
 }

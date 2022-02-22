@@ -45,6 +45,7 @@ export default class MenuSceneMediator extends BaseSceneMediator<MenuScene> {
 
   protected onStartButtonClick(): void {
     this.sendNotification(MenuScene.START_BUTTON_CLICKED_NOTIFICATION);
+    this.sceneManager.stop(MenuScene.NAME);
   }
   protected onSettingsIconClick(): void {
     this.sendNotification(MenuScene.SETTINGS_ICON_CLICKED_NOTIFICATION);

@@ -1,3 +1,4 @@
+import { GameVOProxy } from '../../../../model/game/GameVOProxy';
 import BaseViewMediator from '../../../base/BaseViewMediator';
 import GameScene from '../../../scenes/GameScene';
 import { Player } from './Player';
@@ -28,5 +29,8 @@ export default class PlayerMediator extends BaseViewMediator<Player> {
   protected setView(): void {
     const view = new Player(this.sceneManager.getScene(GameScene.name));
     super.setView(view);
+  }
+  protected get gameVOProxy(): GameVOProxy {
+    return this.facade.retrieveProxy(GameVOProxy.NAME);
   }
 }
