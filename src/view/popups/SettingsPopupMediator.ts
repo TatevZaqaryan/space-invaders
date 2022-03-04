@@ -1,4 +1,4 @@
-import GameScene from '../scenes/GameScene';
+import HeaderView from '../component/header/HeaderView';
 import BasePopupMediator from './BasePopupMediator';
 import SettingsPopup from './SettingsPopup';
 
@@ -10,12 +10,12 @@ export default class SettingsPopupMediator extends BasePopupMediator<SettingsPop
   }
   public registerNotificationInterests(): void {
     this.subscribeToNotifications(
-      GameScene.SETTINGS_BUTTON_CLICKED_NOTIFICATION,
+      HeaderView.SETTINGS_BUTTON_CLICKED_NOTIFICATION,
     );
   }
   handleSubscribedNotification(notificationName: string, ...args: any[]): void {
     switch (notificationName) {
-      case GameScene.SETTINGS_BUTTON_CLICKED_NOTIFICATION:
+      case HeaderView.SETTINGS_BUTTON_CLICKED_NOTIFICATION:
         console.warn('barev');
 
         this.showView();

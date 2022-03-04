@@ -27,7 +27,7 @@ export namespace Locales {
     public static Name: string = 'en';
     public static FileURL: string = 'assets/locales/en.json';
     public static Extension: string = '.json';
-    public static Size: string = '4';
+    public static Size: string = '110';
   }
   export class Ru {
     public static Name: string = 'ru';
@@ -109,6 +109,7 @@ export namespace MultiAtlases {
       export enum Frames {
         InformationLevel = 'information/level.png',
         InformationLife = 'information/life.png',
+        InformationNotLife = 'information/not-life.png',
       }
     }
   }
@@ -136,6 +137,20 @@ export namespace MultiAtlases {
         LoadingLoadingFinish = 'loading/loading-finish.png',
         LoadingLoading2 = 'loading/loading2.png',
         LoadingLoading1 = 'loading/loading1.png',
+      }
+    }
+  }
+  export namespace Main {
+    export class Atlas {
+      public static Name: string = 'main';
+      public static AtlasURL: string = 'assets/multi-atlases/main.json';
+      public static TextureURL: string = 'assets/multi-atlases/';
+    }
+    export namespace Atlas {
+      export enum Frames {
+        InformationLevel = 'information/level.png',
+        InformationLife = 'information/life.png',
+        InformationNotLife = 'information/not-life.png',
       }
     }
   }

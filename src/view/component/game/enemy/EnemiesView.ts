@@ -21,7 +21,7 @@ export class EnemiesView extends Phaser.GameObjects.Container {
     this.scene.add.existing(this);
   }
 
-  public findEnemy(key: string): IEnemy {
+  findEnemy(key: string): IEnemy {
     const sorted = this.enemies.sort((a, b) => b.y - a.y);
     return sorted.find((enemy) => enemy.config.word.startsWith(key))?.config;
   }
@@ -31,6 +31,11 @@ export class EnemiesView extends Phaser.GameObjects.Container {
     if (!enemy) {
       return;
     }
+    enemy.config.left.length === 0 &&
+      enemy.off(
+        Phaser.GameObjects.Events.DESTROY,
+        this.onEnemyDestroyed.bind(this, enemy),
+      );
     enemy.updateByConfig();
   }
 

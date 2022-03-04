@@ -21,6 +21,7 @@ export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
         this.startScene();
         break;
 
+        break;
       default:
         this.handleDefaultNotifications(notificationName, ...args);
         break;
@@ -34,11 +35,7 @@ export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
   }
   protected setViewComponentListeners(): void {
     super.setViewComponentListeners();
-    this.viewComponent.events.on(
-      GameScene.SETTINGS_BUTTON_CLICKED_EVENT,
-      this.onSettingsButtonClicked,
-      this,
-    );
+
     this.viewComponent.events.on(
       GameScene.UPDATE_ENEMIES_EVENT,
       this.onUpdateEnemies,
@@ -49,10 +46,6 @@ export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
       this.onKeyTyped,
       this,
     );
-  }
-
-  protected onSettingsButtonClicked(): void {
-    this.sendNotification(GameScene.SETTINGS_BUTTON_CLICKED_NOTIFICATION);
   }
 
   protected onUpdateEnemies(): void {

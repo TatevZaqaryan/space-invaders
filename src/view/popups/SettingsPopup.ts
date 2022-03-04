@@ -58,10 +58,10 @@ export default class SettingsPopup extends BasePopup {
     this.quit.setInteractive();
   }
   protected createCancel(): void {
-    this.restart = new MenuButton(this.scene, {
+    this.cancel = new MenuButton(this.scene, {
       text: 'Cancel',
     });
-    this.add(this.restart);
+    this.add(this.cancel);
     this.cancel.x = this.width * 0.5;
     this.cancel.y = this.height * 0.9;
     this.cancel.setInteractive();

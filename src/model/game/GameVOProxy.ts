@@ -72,7 +72,4 @@ export class GameVOProxy extends Proxy<GameVO> {
   public getPlayer() {
     this.vo.player.life;
   }
-  public getEnemy() {
-    this.vo.enemies;
-  }
 }
