@@ -1,4 +1,5 @@
 import { GameVOProxy } from '../../model/game/GameVOProxy';
+import { EnemiesView } from '../component/game/player/enemy/EnemiesView';
 import BaseSceneMediator from './BaseSceneMediator';
 import GameScene from './GameScene';
 
@@ -13,15 +14,16 @@ export default class GameSceneMediator extends BaseSceneMediator<GameScene> {
 
   public registerNotificationInterests(): void {
     this.subscribeToNotifications(GameVOProxy.REGISTERED);
+    this.subscribeToNotification(EnemiesView.ENEMY_DESTROYED);
   }
 
   protected handleNotification(notificationName: string, ...args: any[]): void {
     switch (notificationName) {
       case GameVOProxy.REGISTERED:
         this.startScene();
-        break;
 
         break;
+
       default:
         this.handleDefaultNotifications(notificationName, ...args);
         break;

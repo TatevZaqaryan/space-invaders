@@ -47,7 +47,9 @@ export default class FooterView extends Phaser.GameObjects.Container {
     this.text.setDepth(1);
     this.text.setOrigin(1, 0.5);
   }
-  protected setListeners(): void {}
+  protected setListeners(): void {
+    this.onScoreUpdated();
+  }
   protected onScoreUpdated(): void {
     this.emit(FooterView.SCORE_UPDATED_EVENT);
   }

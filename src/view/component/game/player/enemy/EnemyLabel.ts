@@ -1,7 +1,7 @@
 import { NinePatch } from '@rollinsafary/phaser3-ninepatch-plugin';
-import { Fonts, MultiAtlases } from '../../../../assets';
-import { IEnemy } from '../../../../model/game/GameVO';
-import BaseScene from '../../../scenes/BaseScene';
+import { Fonts, MultiAtlases } from '../../../../../assets';
+import { IEnemy } from '../../../../../model/game/GameVO';
+import BaseScene from '../../../../scenes/BaseScene';
 
 export default class EnemyLabel extends Phaser.GameObjects.Container {
   protected background: NinePatch;
@@ -54,7 +54,7 @@ export default class EnemyLabel extends Phaser.GameObjects.Container {
   protected createUnCompleteText(): void {
     const style: Phaser.Types.GameObjects.Text.TextStyle = {
       fontFamily: Fonts.Normal.Name,
-      fontSize: '40px',
+      fontSize: '30px',
       color: '#ffffff',
     };
     this.unCompleteText = this.scene.make.text({
@@ -71,7 +71,7 @@ export default class EnemyLabel extends Phaser.GameObjects.Container {
     const style: Phaser.Types.GameObjects.Text.TextStyle = {
       fontFamily: Fonts.Normal.Name,
       fontSize: '40px',
-      color: '#00ff00',
+      color: '#05F2DB',
     };
     this.completeText = this.scene.make.text({
       x: 0,

@@ -1,11 +1,14 @@
 import { Fonts, MultiAtlases } from '../../../assets';
 import BaseScene from '../../scenes/BaseScene';
 import GameScene from '../../scenes/GameScene';
+import HeaderViewMediator from './HeaderViewMediator';
 
 export default class HeaderView extends Phaser.GameObjects.Container {
   public static NAME: string = 'HeaderView';
   public static SETTINGS_BUTTON_CLICKED_EVENT: string = 'settingsButtonClicked';
   public static SETTINGS_BUTTON_CLICKED_NOTIFICATION: string = `${HeaderView.NAME}SettingsButtonClicked`;
+  public static LIFE_ICON_DESTROYED_EVENT: string = 'lifeDestroyed';
+  public static LIFE_DESTROYED: string = `${HeaderView.NAME}LifeDestroyed`;
   public scene: GameScene;
   protected settingsIcon: Phaser.GameObjects.Image;
   protected muteMusicIcon: Phaser.GameObjects.Image;
@@ -30,7 +33,7 @@ export default class HeaderView extends Phaser.GameObjects.Container {
     this.createLevelText();
     this.createLevelIcon();
     this.createSettingsIcon();
-    console.warn('barev garun');
+    this.setListeners();
   }
   protected createHeader(): void {
     this.hider = this.scene.make.image({
@@ -87,6 +90,10 @@ export default class HeaderView extends Phaser.GameObjects.Container {
     this.life.setDepth(1);
     this.life.setInteractive();
     this.life.setScale(1.5);
+  }
+  protected destroyLifeIcon() {
+    this.life.destroy();
+    this.emit(HeaderView.LIFE_ICON_DESTROYED_EVENT);
   }
   protected createNotLifeIcon(x: number): void {
     this.notLife = this.scene.make.image({
@@ -147,6 +154,8 @@ export default class HeaderView extends Phaser.GameObjects.Container {
     );
   }
   protected onSettingsButtonClicked(): void {
+    console.warn('barev');
+
     this.scene.events.emit(HeaderView.SETTINGS_BUTTON_CLICKED_EVENT);
   }
 }

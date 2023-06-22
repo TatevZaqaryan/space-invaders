@@ -1,7 +1,7 @@
-import { MultiAtlases } from '../../../../assets';
-import { IEnemy } from '../../../../model/game/GameVO';
-import BaseScene from '../../../scenes/BaseScene';
-import GameScene from '../../../scenes/GameScene';
+import { MultiAtlases } from '../../../../../assets';
+import { IEnemy } from '../../../../../model/game/GameVO';
+import BaseScene from '../../../../scenes/BaseScene';
+import GameScene from '../../../../scenes/GameScene';
 import EnemyLabel from './EnemyLabel';
 
 export default class Enemy extends Phaser.GameObjects.Container {

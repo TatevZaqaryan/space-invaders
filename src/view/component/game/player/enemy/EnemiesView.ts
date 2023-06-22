@@ -1,7 +1,7 @@
-import { IEnemy } from '../../../../model/game/GameVO';
-import { pickAny } from '../../../../utils/Utils';
-import BaseScene from '../../../scenes/BaseScene';
-import GameScene from '../../../scenes/GameScene';
+import { IEnemy } from '../../../../../model/game/GameVO';
+import { pickAny } from '../../../../../utils/Utils';
+import BaseScene from '../../../../scenes/BaseScene';
+import GameScene from '../../../../scenes/GameScene';
 import Enemy from './Enemy';
 export class EnemiesView extends Phaser.GameObjects.Container {
   public static NAME: string = 'EnemiesView';

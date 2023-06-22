@@ -1,6 +1,6 @@
 import { SimpleCommand } from '@rollinsafary/mvc';
 import FooterViewMediator from '../../../view/component/footer/FooterViewMediator';
-import EnemiesViewMediator from '../../../view/component/game/enemy/EnemiesViewMediator';
+import EnemiesViewMediator from '../../../view/component/game/player/enemy/EnemiesViewMediator';
 import PlayerMediator from '../../../view/component/game/player/PlayerMediator';
 import HeaderViewMediator from '../../../view/component/header/HeaderViewMediator';
 

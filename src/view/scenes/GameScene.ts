@@ -1,4 +1,4 @@
-import { EnemiesView } from '../component/game/enemy/EnemiesView';
+import { EnemiesView } from '../component/game/player/enemy/EnemiesView';
 import { Player } from '../component/game/player/Player';
 import { loopRunnable } from '../utils/phaser/TimeUtils';
 import { BackgroundScene } from './BackgroundScene';

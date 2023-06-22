@@ -1,3 +1,4 @@
+import HeaderView from '../component/header/HeaderView';
 import BaseSceneMediator from './BaseSceneMediator';
 import MenuScene from './MenuScene';
 import SettingsScene from './SettingsScene';
@@ -14,6 +15,9 @@ export class SettingsSceneMediator extends BaseSceneMediator<SettingsScene> {
   }
   registerNotificationInterests(): void {
     this.subscribeToNotifications(MenuScene.SETTINGS_ICON_CLICKED_NOTIFICATION);
+    this.subscribeToNotifications(
+      HeaderView.SETTINGS_BUTTON_CLICKED_NOTIFICATION,
+    );
   }
   protected handleDefaultNotifications(
     notificationName: string,
@@ -21,8 +25,9 @@ export class SettingsSceneMediator extends BaseSceneMediator<SettingsScene> {
   ): void {
     switch (notificationName) {
       case MenuScene.SETTINGS_ICON_CLICKED_NOTIFICATION:
-        console.warn('hello');
-
+        this.startScene();
+        break;
+      case HeaderView.SETTINGS_BUTTON_CLICKED_NOTIFICATION:
         this.startScene();
         break;
       default:

@@ -1,5 +1,5 @@
 import { SimpleCommand, SyncMacroCommand } from '@rollinsafary/mvc';
-import { EnemiesView } from '../view/component/game/enemy/EnemiesView';
+import { EnemiesView } from '../view/component/game/player/enemy/EnemiesView';
 import GameScene from '../view/scenes/GameScene';
 import MenuScene from '../view/scenes/MenuScene';
 import ApplyKeyDownCommand from './game/ApplyKeyDownCommand';

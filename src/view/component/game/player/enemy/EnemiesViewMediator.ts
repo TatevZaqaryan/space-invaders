@@ -1,7 +1,7 @@
-import { IEnemy } from '../../../../model/game/GameVO';
-import { GameVOProxy } from '../../../../model/game/GameVOProxy';
-import BaseViewMediator from '../../../base/BaseViewMediator';
-import GameScene from '../../../scenes/GameScene';
+import { IEnemy } from '../../../../../model/game/GameVO';
+import { GameVOProxy } from '../../../../../model/game/GameVOProxy';
+import BaseViewMediator from '../../../../base/BaseViewMediator';
+import GameScene from '../../../../scenes/GameScene';
 import { EnemiesView } from './EnemiesView';
 
 export default class EnemiesViewMediator extends BaseViewMediator<EnemiesView> {

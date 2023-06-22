@@ -46,15 +46,16 @@ export class GameVOProxy extends Proxy<GameVO> {
     if (this.vo.target.left[0] === key) {
       this.vo.target.left = this.vo.target.left.substring(1);
       this.incrementScore();
+
       this.sendNotification(GameVOProxy.SHOT_APPLIED);
     } else {
       this.incrementMistakes();
     }
-    this.sendNotification(GameVOProxy.STATISTICS_UPDATED);
   }
 
   public incrementScore(): void {
     this.vo.statistics.score++;
+    this.sendNotification(GameVOProxy.STATISTICS_UPDATED);
   }
 
   public incrementMistakes(): void {

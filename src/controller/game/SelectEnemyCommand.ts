@@ -1,6 +1,6 @@
 import { IEnemy } from '../../model/game/GameVO';
-import { EnemiesView } from '../../view/component/game/enemy/EnemiesView';
-import EnemiesViewMediator from '../../view/component/game/enemy/EnemiesViewMediator';
+import { EnemiesView } from '../../view/component/game/player/enemy/EnemiesView';
+import EnemiesViewMediator from '../../view/component/game/player/enemy/EnemiesViewMediator';
 import ApplyShotCommand from './ApplyShotCommand';
 import BaseGameMacroCommand from './BaseGameMacroCommand';
 

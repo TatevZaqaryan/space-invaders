@@ -1,5 +1,6 @@
 import BaseViewMediator from '../../base/BaseViewMediator';
 import GameScene from '../../scenes/GameScene';
+import { EnemiesView } from '../game/player/enemy/EnemiesView';
 import HeaderView from './HeaderView';
 
 export default class HeaderViewMediator extends BaseViewMediator<HeaderView> {
@@ -12,15 +13,24 @@ export default class HeaderViewMediator extends BaseViewMediator<HeaderView> {
     this.setView();
   }
   public registerNotificationInterests(): void {}
-  protected handleNotification(
-    notificationName: string,
-    ...args: any[]
-  ): void {}
+
+  protected handleNotification(notificationName: string, ...args: any[]): void {
+    switch (notificationName) {
+      case EnemiesView.ENEMY_DESTROYED:
+        this;
+        break;
+    }
+  }
   protected setViewComponentListeners(): void {
     super.setViewComponentListeners();
     this.viewComponent.scene.events.on(
       HeaderView.SETTINGS_BUTTON_CLICKED_EVENT,
       this.onSettingsButtonClicked,
+      this,
+    );
+    this.viewComponent.on(
+      HeaderView.LIFE_ICON_DESTROYED_EVENT,
+      this.onLifeDestroy,
       this,
     );
   }
@@ -33,5 +43,8 @@ export default class HeaderViewMediator extends BaseViewMediator<HeaderView> {
   }
   protected onSettingsButtonClicked(): void {
     this.sendNotification(HeaderView.SETTINGS_BUTTON_CLICKED_NOTIFICATION);
+  }
+  protected onLifeDestroy() {
+    this.sendNotification(HeaderView.LIFE_DESTROYED);
   }
 }
